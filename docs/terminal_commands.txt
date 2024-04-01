@@ -1,0 +1,8 @@
+kafka-console-producer --topic sentences --bootstrap-server localhost:9092
+
+kafka-console-consumer --topic word-count --bootstrap-server localhost:9092 \
+--from-beginning \
+--property print.key=true \
+--property key-separator=" : " \
+--key-deserializer "org.apache.kafka.common.serialization.StringDeserializer" \
+--value-deserializer "org.apache.kafka.common.serialization.LongDeserializer"
